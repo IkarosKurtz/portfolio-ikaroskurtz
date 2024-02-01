@@ -2,18 +2,55 @@
 
 ---
 
-<section>
-  <h1>HERO</h1>
+<section
+  class="flex items-center justify-center border-b-2 border-b-algae-green-500"
+>
+  <article class="bg-algae-green-200 hero rounded-lg text-text-b p-5">
+    <div class="[grid-area:image] flex-col text-center">
+      <img
+        src="https://hips.hearstapps.com/hmg-prod/images/marge-simpson-1569921773.jpg?resize=2048:*"
+        alt="imagen"
+      />
+      <p>Homero</p>
+    </div>
+    <div class="[grid-area:name]">
+      <h1>Nombre</h1>
+    </div>
+    <article class="[grid-area:description] pl-4 overflow-y-auto h-auto">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum odit ad
+      sint, ratione, quia eligendi iusto libero eum minima quisquam eos. Ab,
+      excepturi! Labore sequi minima id facere dolor nulla? Lorem ipsum dolor
+      sit amet, consectetur adipisicing elit. Quod quis, ipsam nulla debitis
+      reprehenderit cum architecto ad dolorem. Mole Lorem ipsum dolor sit amet
+      consectetur adipisicing elit. Quam voluptatum perspiciatis et beatae, est
+      ullam impedit voluptas illum sit delectus nesciunt quibusdam reprehenderit
+      dolor sed blanditiis laborum, dicta aliquid pariatur!
+    </article>
+  </article>
 </section>
 
 <style>
   section {
-    background-color: #f0f0f0;
     padding: 20px;
-    text-align: center;
   }
+
+  .hero {
+    width: auto;
+
+    max-width: 50rem;
+    max-height: 15em;
+
+    display: grid;
+    grid-template-areas:
+      "image description"
+      "name description"
+      "name description";
+    grid-template-columns: 2fr 5fr;
+    grid-template-rows: 1fr auto auto;
+  }
+
   h1 {
     font-size: 3em;
-    color: #333;
+    font-weight: bold;
   }
 </style>
