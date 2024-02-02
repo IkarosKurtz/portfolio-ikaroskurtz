@@ -6,24 +6,28 @@ interface Props {
 }
 
 const { title, description, image } = Astro.props
+
+const icon =
+  image == ""
+    ? "https://uning.es/wp-content/uploads/2016/08/ef3-placeholder-image.jpg"
+    : image
 ---
 
-<div class="flex flex-col items-center mt-3">
+<div
+  class="flex flex-col items-center mt-3 bg-algae-green-300 p-6 text-text-b rounded-3xl"
+>
   <h1>{title}</h1>
-  <img
-    src={image == ""
-      ? "https://uning.es/wp-content/uploads/2016/08/ef3-placeholder-image.jpg"
-      : image}
-    alt={title}
-    class="w-1/2"
-  />
+  <img src={icon} alt={title} class="w-1/2" />
   <p>{description}</p>
 </div>
 
 <style>
   h1 {
     font-size: 2rem;
-    margin-bottom: 1rem;
     font-weight: 700;
+  }
+
+  img {
+    margin: 1em 0;
   }
 </style>

@@ -4,77 +4,40 @@ import Hero from "../components/Hero.astro"
 import Badge from "../components/Badge.astro"
 import ProjectFrame from "../components/ProjectFrame.astro"
 import Title from "../components/Title.astro"
+
+interface Project {
+  title: string
+  description: string
+  image: string
+}
+
+const projects: Project[] = [
+  {
+    title: "CodeLauncher",
+    description: `Streamline your project management with ease, using a variety of frameworks like Vite, Angular, Python, and Rust, without ever touching a terminal. Customize project icons for quick recognition, open them in VSCode with a double-click, and manage files effortlessly in one central hub. Simplify your development process with CodeLauncher, where efficiency meets convenience.`,
+    image: "",
+  },
+]
 ---
 
 <Layout title="IkarosKurtz">
-  <main class="gradient">
+  <main>
     <Hero />
     <section
-      class="flex flex-col content-center items-center justify-center w-[60%] my-[2rem] mx-auto"
+      class="flex flex-col content-center items-center justify-center w-[85%] md:w-[60%] mt-[2rem] mx-auto"
     >
       <Title>Projects</Title>
-      <div>
-        <ProjectFrame
-          description="Un manejador de proyectos, enfocado para devs"
-          title="CodeLauncher"
-          image=""
-        />
-        <ProjectFrame
-          description="Un manejador de proyectos, enfocado para devs"
-          title="CodeLauncher"
-          image=""
-        />
-        <ProjectFrame
-          description="Un manejador de proyectos, enfocado para devs"
-          title="CodeLauncher"
-          image=""
-        />
-        <ProjectFrame
-          description="Un manejador de proyectos, enfocado para devs"
-          title="CodeLauncher"
-          image=""
-        />
-        <ProjectFrame
-          description="Un manejador de proyectos, enfocado para devs"
-          title="CodeLauncher"
-          image=""
-        />
-        <ProjectFrame
-          description="Un manejador de proyectos, enfocado para devs"
-          title="CodeLauncher"
-          image=""
-        />
-        <ProjectFrame
-          description="Un manejador de proyectos, enfocado para devs"
-          title="CodeLauncher"
-          image=""
-        />
-        <ProjectFrame
-          description="Un manejador de proyectos, enfocado para devs"
-          title="CodeLauncher"
-          image=""
-        />
-      </div>
+      <article>
+        {
+          projects.map((project) => (
+            <ProjectFrame
+              image={project.image}
+              title={project.title}
+              description={project.description}
+            />
+          ))
+        }
+      </article>
     </section>
   </main>
 </Layout>
-
-<style>
-  .gradient {
-    background: linear-gradient(334deg, #dcfce9, #16a354, #052e19);
-    background-size: 180% 180%;
-    animation: gradient-animation 6s ease infinite;
-  }
-
-  @keyframes gradient-animation {
-    0% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-    100% {
-      background-position: 0% 50%;
-    }
-  }
-</style>

@@ -1,6 +1,7 @@
 ---
 // Supports weights 300-700
 import "@fontsource-variable/space-grotesk"
+import "atropos/atropos.css"
 
 interface Props {
   title: string
@@ -19,11 +20,40 @@ const { title } = Astro.props
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <body>
+  <body class="gradient relative -z-[2]">
     <slot />
+    <footer class="border-t-2 mt-8 border-algae-green-900 text-text">
+      <p>
+        Built with <a href="https://astro.build">Astro</a>
+      </p>
+    </footer>
   </body>
 </html>
+
 <style is:global>
+  .gradient {
+    background: linear-gradient(
+      334deg,
+      var(--color-algae-green-600),
+      var(--color-algae-green-800),
+      var(--color-algae-green-950)
+    );
+    bckground-size: 180% 180%;
+    animation: gradient-animation 6s ease infinite;
+  }
+
+  @keyframes gradient-animation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
   *,
   *::before,
   *::after {
