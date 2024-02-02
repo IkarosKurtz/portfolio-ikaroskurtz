@@ -1,0 +1,25 @@
+<div id="title" class="inline-block p-2 relative">
+  <div id="bar" class="absolute w-0 h-[100%] -z-[1] left-0 top-0"></div>
+  <h1 class="text-5xl text-text-w font-bold">
+    <slot />
+  </h1>
+</div>
+
+<style>
+  #bar {
+    background: linear-gradient(to left, #bbf7d4, #81eeb0, #4ade8a);
+    transition: all 0.25s cubic-bezier(0.96, 0.01, 0.49, 0.88);
+  }
+
+  #title:hover > #bar {
+    width: 75%;
+  }
+
+  #title > h1 {
+    transition: all 0.25s cubic-bezier(0.96, 0.01, 0.49, 0.88);
+  }
+
+  #title:hover > h1 {
+    @apply text-text-b;
+  }
+</style>

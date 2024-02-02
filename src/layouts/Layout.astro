@@ -1,4 +1,7 @@
 ---
+// Supports weights 300-700
+import "@fontsource-variable/space-grotesk"
+
 interface Props {
   title: string
 }
@@ -26,16 +29,58 @@ const { title } = Astro.props
   *::after {
     box-sizing: border-box;
   }
+  :root {
+    --color-algae-green-50: #f0fdf5;
+    --color-algae-green-100: #dcfce9;
+    --color-algae-green-200: #bbf7d4;
+    --color-algae-green-300: #81eeb0;
+    --color-algae-green-400: #4ade8a;
+    --color-algae-green-500: #22c569;
+    --color-algae-green-600: #16a354;
+    --color-algae-green-700: #158044;
+    --color-algae-green-800: #166539;
+    --color-algae-green-900: #145331;
+    --color-algae-green-950: #052e19;
+  }
 
   html {
-    @apply bg-algae-green-900;
+    @apply bg-algae-green-950;
+
+    font-family: "Space Grotesk Variable", system-ui, sans-serif;
   }
 
   body {
-    width: 80%;
     margin: auto;
     min-height: 100vh;
 
     @apply text-text-w;
+  }
+
+  ::-webkit-scrollbar {
+    width: 7px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: var(--color-algae-green-800);
+    border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-algae-green-500);
+    border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-algae-green-400);
+  }
+
+  ::selection {
+    background: var(--color-algae-green-400);
+    color: var(--color-algae-green-950);
+  }
+
+  ::-moz-selection {
+    background: var(--color-algae-green-400);
+    color: var(--color-algae-green-950);
   }
 </style>

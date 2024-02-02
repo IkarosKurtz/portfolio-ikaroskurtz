@@ -1,20 +1,16 @@
----
-
----
-
 <section
-  class="flex items-center justify-center border-b-2 border-b-algae-green-500"
+  class="flex items-center justify-center border-b-2 border-b-algae-green-300"
 >
   <article class="bg-algae-green-200 hero rounded-lg text-text-b p-5">
-    <div class="[grid-area:image] flex-col text-center">
+    <div class="[grid-area:image] flex content-center justify-center">
       <img
-        src="https://hips.hearstapps.com/hmg-prod/images/marge-simpson-1569921773.jpg?resize=2048:*"
+        src="https://i.redd.it/tkko3nf3vmv91.png"
         alt="imagen"
+        class="rounded-full h-32 w-32 object-cover object-center"
       />
-      <p>Homero</p>
     </div>
-    <div class="[grid-area:name]">
-      <h1>Nombre</h1>
+    <div class="[grid-area:name] text-center">
+      <p class="name">Carlos Leonardo Cruz Ortiz</p>
     </div>
     <article class="[grid-area:description] pl-4 overflow-y-auto h-auto">
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum odit ad
@@ -35,8 +31,6 @@
   }
 
   .hero {
-    width: auto;
-
     max-width: 50rem;
     max-height: 15em;
 
@@ -49,8 +43,8 @@
     grid-template-rows: 1fr auto auto;
   }
 
-  h1 {
-    font-size: 3em;
+  .name {
+    font-size: 1.2rem;
     font-weight: bold;
   }
 </style>
